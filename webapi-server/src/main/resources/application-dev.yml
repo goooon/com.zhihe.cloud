@@ -1,0 +1,37 @@
+server:
+  port: 10406
+spring:
+  redis:
+    database: 1
+    host: ${redis.host:192.168.0.108}
+    port: ${redis.port:6379}
+    pool:
+      max-idle: 600
+      min-idle: 0
+      max-active: 600
+      max-wait: 10000
+    password: zcadmin
+  zipkin:
+    baseUrl: http://${zipkin.host:127.0.0.1}:${zipkin.port:10412}
+    enabled: false
+  sleuth:
+    sampler:
+      percentage: 1.0 #需要采集请求的百分比1.0 100%
+  http:
+    multipart:
+      maxFileSize: 100Mb
+      maxRequestSize: 100Mb
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
+eureka:
+  instance:
+    hostname: ${server.ipaddress:localhost}
+    prefer-ip-address: true
+    non-secure-port: ${server.port}
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value}
+  client:
+    serviceUrl:
+      defaultZone: http://template:template@${eureka.host:discovery1}:${eureka.port:10405}/eureka/,http://template:template@${eureka.host2:discovery2}:${eureka.port2:10406}/eureka/

@@ -1,0 +1,33 @@
+
+spring:
+  application:
+    name: template-eureka-server
+  security:
+    basic:
+      enabled: true #寮€鍚痟ttp璁よ瘉
+    user:
+      name: zhihe
+      password: Password
+
+---
+
+
+server:
+  port: 10405
+spring:
+  profiles: discovery1 #鎸囧畾profile=discovery1
+
+
+eureka:
+  instance:
+    hostname: discovery1
+    non-secure-port: ${server.port:10405}
+    prefer-ip-address: true
+    ip-address: ${regist.ip:127.0.0.1} #璇ユ湇鍔￠儴缃叉湇鍔″櫒IP
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value}
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://zhihe:zhihe@${eureka.host:discovery2}:${eureka.port:10406}/eureka/

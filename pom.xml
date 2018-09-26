@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.zhihe.template</groupId>
+    <artifactId>template-cloud-system</artifactId>
+    <packaging>pom</packaging>
+    <name>template</name>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-parent</artifactId>
+        <version>Finchley.SR1</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring-cloud.version>Finchley.SR1</spring-cloud.version>
+        <java.version>1.8</java.version>
+        <adminlte.version>2.3.2</adminlte.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <springfox-swagger2.version>2.5.0</springfox-swagger2.version>
+        <apache.http.version>4.3.2</apache.http.version>
+        <fastjson.version>1.2.7</fastjson.version>
+        <commons.lang.version>2.6</commons.lang.version>
+    </properties>
+
+    <!-- 添加依赖 -->
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- 热部署 <dependency>
+
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+       </dependency> -->
+
+        <dependency>
+            <groupId>org.webjars.bower</groupId>
+            <artifactId>adminlte</artifactId>
+            <version>${adminlte.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang3.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${validation-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${springfox-swagger2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${springfox-swagger2.version}</version>
+        </dependency>
+        <!-- feilong 工具类jar包-->
+        <!--<dependency>-->
+        <!--<groupId>com.feilong.platform</groupId>-->
+        <!--<artifactId>feilong-core</artifactId>-->
+        <!--<version>1.10.3</version>-->
+        <!--</dependency>-->
+    </dependencies>
+
+    <modules>
+        <module>eureka-server</module> <!-- 注册发现服务 10405 10406     /10440 10441-->
+        <module>mobapi-server</module> <!-- 主数据访问服务 10407/10435    -->
+        <module>webapi-server</module> <!-- 系统API接口服务 10409/10437	   -->
+    </modules>
+
+</project>
