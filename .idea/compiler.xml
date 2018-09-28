@@ -6,16 +6,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="eureka-server" />
         <module name="mobapi-server" />
         <module name="webapi-server" />
+        <module name="zipkin-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="com.zhihe.template" target="1.8" />
+      <module name="config-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
       <module name="mobapi-server" target="1.8" />
       <module name="webapi-server" target="1.8" />
+      <module name="zipkin-server" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

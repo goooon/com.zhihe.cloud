@@ -3,9 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/com.zhihe.template.iml" filepath="$PROJECT_DIR$/.idea/com.zhihe.template.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/mobapi-server/mobapi-server.iml" filepath="$PROJECT_DIR$/mobapi-server/mobapi-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/webapi-server/webapi-server.iml" filepath="$PROJECT_DIR$/webapi-server/webapi-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zipkin-server/zipkin-server.iml" filepath="$PROJECT_DIR$/zipkin-server/zipkin-server.iml" />
     </modules>
   </component>
 </project>

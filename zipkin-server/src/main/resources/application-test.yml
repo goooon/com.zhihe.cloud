@@ -1,0 +1,12 @@
+server:
+  port: 10430
+eureka:
+  instance:
+    hostname: ${server.ipaddress:localhost}
+    prefer-ip-address: true
+    non-secure-port: ${server.port}
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value}
+  client:
+    serviceUrl:
+      defaultZone: http://template:template@${eureka.host:discovery1}:${eureka.port:10405}/eureka/,http://jiuling:jiuling@${eureka.host2:discovery2}:${eureka.port2:10406}/eureka/

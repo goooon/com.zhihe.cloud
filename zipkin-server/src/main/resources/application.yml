@@ -1,0 +1,19 @@
+
+spring:
+  application:
+    name: template-zipkin-server
+  profiles:
+    active: dev
+
+#eureka:
+#  instance:
+#    hostname: yunban-logs-server
+#    non-secure-port: ${server.port:9210}
+#    prefer-ip-address: true
+#    metadataMap:
+#      instanceId: ${spring.application.name}:${random.value}
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://ybzh:ybzh51106@${eureka.host:120.77.49.205}:${eureka.port:8761}/eureka/,http://ybzh:ybzh51106@${eureka.host:120.77.49.205}:${eureka.port2:8762}/eureka/

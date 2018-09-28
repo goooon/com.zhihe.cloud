@@ -1,0 +1,21 @@
+
+spring:
+  zipkin:
+    baseUrl: http://${zipkin.host:127.0.0.1}:${zipkin.port:10430}
+    enabled: true
+  sleuth:
+    sampler:
+      percentage: 0.2 #需要采集请求的百分比0.2
+
+server:
+  port: 10430
+eureka:
+  instance:
+    hostname: ${server.ipaddress:localhost}
+    prefer-ip-address: true
+    non-secure-port: ${server.port}
+    metadata-map:
+      instanceId: ${spring.application.name}:${random.value}
+  client:
+    serviceUrl:
+      defaultZone: http://template:template@${eureka.host:discovery5}:${eureka.port:8063}/eureka/,http://jiuling:jiuling@${eureka.host2:discovery6}:${eureka.port2:8064}/eureka/
