@@ -3,7 +3,8 @@ spring:
     name: template-webapi-server
   profiles:
     active: dev
-
+  thymeleaf:
+    prefix: classpath:/templates/
 
  #hystrix.command.default.execution.timeout.enabled=false  关闭超时管理
 hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 80000
@@ -11,6 +12,8 @@ hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 80000
 ribbon:
     ReadTimeout: 60000
     ConnectTimeout: 60000
+
+
   
 
   
